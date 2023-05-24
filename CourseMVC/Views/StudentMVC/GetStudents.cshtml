@@ -1,0 +1,59 @@
+﻿@model IEnumerable<DataAccess.Model.Student>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetStudents</title>
+    <style>
+        table {
+            border: 3px solid #ddd;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 3px solid #ddd;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.age)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            using (Html.BeginForm("EditStudentView", "StudentMVC", FormMethod.Post))
+            {
+                <tr>
+                    <td>
+                        @Html.TextBoxFor(modelItem => item.name)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(modelItem => item.age)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "EditStudentView", new { id = item.Id })
+                        @Html.ActionLink("Delete", "DeleteStudentView", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+    @Html.ActionLink("Create a student", "CreateStudentView")
+    @Html.ActionLink("Back to courses", "GetCourses", "CourseMVC")
+</body>
+</html>

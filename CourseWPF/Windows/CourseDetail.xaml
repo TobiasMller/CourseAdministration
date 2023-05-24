@@ -1,0 +1,21 @@
+﻿<Window x:Class="CourseWPF.Windows.CourseDetail"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CourseWPF.Windows"
+        mc:Ignorable="d"
+        Title="CourseDetail" Height="450" Width="800">
+    <Grid x:Name="CourseDetails">
+        <Label Content="Course" HorizontalAlignment="Left" Margin="52,29,0,0" VerticalAlignment="Top" Height="45" Width="177" RenderTransformOrigin="-0.01,0.14" FontSize="32" FontFamily="Arial Black"/>
+        <TextBox x:Name="name" Text="{Binding Name, Mode=TwoWay}" HorizontalAlignment="Left" Margin="52,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="room" Text="{Binding Room, Mode=TwoWay}" HorizontalAlignment="Left" Margin="52,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ListBox x:Name="StudentsAttendingTheCourse" Margin="309,136,175,50"/>
+        <Label Content="Room" HorizontalAlignment="Left" Margin="52,191,0,0" VerticalAlignment="Top"/>
+        <Label Content="Name;" HorizontalAlignment="Left" Margin="52,99,0,0" VerticalAlignment="Top"/>
+        <Label Content="Students attending the course" HorizontalAlignment="Left" Margin="377,89,0,0" VerticalAlignment="Top" Width="182"/>
+        <Button x:Name="DeleteCourseButton" Content="Delete" HorizontalAlignment="Left" Margin="695,384,0,0" VerticalAlignment="Top" Height="20" Width="59" Click="DeleteCourseButton_Click"/>
+        <Button x:Name="EditCourseButton" Content="Edit" HorizontalAlignment="Left" Margin="82,260,0,0" VerticalAlignment="Top" Click="EditCourseButton_Click" />
+        <Label x:Name="ErrorMessage" Content="" HorizontalAlignment="Left" Margin="94,322,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

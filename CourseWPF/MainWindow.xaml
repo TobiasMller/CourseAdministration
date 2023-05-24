@@ -1,0 +1,20 @@
+﻿<Window x:Class="CourseWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CourseWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="Bisque">
+        <ListBox x:Name="CoursesList" MouseDoubleClick="CoursesList_MouseDoubleClick" SelectionChanged="CourseListBox_SelectionChanged" Margin="84,217,587,67" Background="AliceBlue"/>
+        <Button x:Name="CreateCourseWindow" Content="Create Course" HorizontalAlignment="Left" Margin="84,127,0,0" VerticalAlignment="Top" Height="38" Width="129" Click="CreateCourseWindow_Click" Background="AliceBlue"/>
+        <ListBox x:Name="StudentList" MouseDoubleClick="StudentList_MouseDoubleClick" Margin="542,217,116,67" Background="AliceBlue"/>
+        <Button x:Name="CreateStudentsWindow" Content="Create Student" HorizontalAlignment="Left" Height="37" Margin="542,128,0,0" VerticalAlignment="Top" Width="142" Click="CreateStudentsWindow_Click" Background="AliceBlue"/>
+        <ListBox x:Name="StudentsAttendingCourse" HorizontalAlignment="Left" Margin="310,217,0,0" VerticalAlignment="Top" Width="126" Height="150" />
+        <Label Content="Students attending the course" HorizontalAlignment="Left" Margin="290,195,0,0" VerticalAlignment="Top" Height="25" Width="176"/>
+        <Label Content="Double click on a student" HorizontalAlignment="Left" Margin="538,197,0,0" VerticalAlignment="Top" Width="150"/>
+        <Label Content="Click on a course" HorizontalAlignment="Left" Margin="99,196,0,0" VerticalAlignment="Top"/>
+        <Label Content="All students on the school" HorizontalAlignment="Left" Margin="540,184,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

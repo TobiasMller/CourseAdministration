@@ -1,0 +1,67 @@
+﻿@model IEnumerable<DataAccess.Model.Course>
+
+
+@{
+    Layout = null;
+}
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetCourses</title>
+    <style>
+        table {
+            border: 3px solid #ddd;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 3px solid #ddd;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <h1>@Html.ActionLink("Create a new course", "Create")</h1>
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Room)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink(item.Name, "GetCourseDetail", new { id = item.Id })
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Room)
+                </td>
+                <td>
+                    @Html.ActionLink("Delete Course", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+    <p>
+        <h2>@Html.ActionLink("See all students on campus", "GetStudents", "StudentMVC")</h2>
+    </p>
+</body>
+</html>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

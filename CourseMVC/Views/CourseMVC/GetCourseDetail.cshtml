@@ -1,0 +1,53 @@
+﻿@model CourseMVC.Models.CourseDetailViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit Course</title>
+</head>
+<body>
+    <div>
+        <h4>Edit Course</h4>
+        <hr />
+        @using (Html.BeginForm("UpdateCourse", "CourseMVC", FormMethod.Post))
+        {
+            @Html.HiddenFor(model => model.Course.Id)
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Course.Name)
+                </dt>
+                <dd>
+                    @Html.TextBoxFor(model => model.Course.Name)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Course.Room)
+                </dt>
+                <dd>
+                    @Html.TextBoxFor(model => model.Course.Room)
+                </dd>
+            </dl>
+            <p>
+                <input type="submit" value="Save" /> |
+                @Html.ActionLink("Back To Courses", "GetCourses", new { id = Model.Course.Id })
+            </p>
+        }
+    </div>
+    <hr />
+    <div>
+        <h4>Students attending the course</h4>
+        <ul>
+            @foreach (var student in Model.Students)
+            {
+                <li>@student.name</li>
+            }
+        </ul>
+    </div>
+
+</body>
+</html>
